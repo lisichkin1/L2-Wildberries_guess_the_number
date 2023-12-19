@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P';
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  height: 100vh;
+  background-color: #222222;
+  color: #fff;
+}
+/*header*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.button {
+  border: none;
+  padding: 20px 30px;
+  font-size: 20px;
+  background-color: #fff;
+  transition: 0.1s;
+  border: 2px solid black;
+  color: #000;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgba(192, 192, 192, 0.267);
+}
+.header__options,
+.header__options__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__options__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 20px;
+}
+.header__input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: min-content;
+  color: #fff;
+  font-size: 20px;
+}
+.header__input::-webkit-inner-spin-button,
+.header__input::-webkit-outer-spin-button,
+.game__input::-webkit-inner-spin-button,
+.game__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-before {
+  position: relative;
+}
+.input-before::before {
+  content: 'Нажмите на число, чтобы изменить диапазон';
+  font-size: 10px;
+  position: absolute;
+  top: 30px;
+  right: -80px;
+  color: #999; /* Цвет текста */
+  width: 240px;
+}
+/* main */
+.game {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  row-gap: 10vh;
+}
+.game__title,
+.game__number {
+  font-size: 46px;
+}
+.game__number {
+  color: #000;
+  background: #fff;
+  padding: 26px 30px;
+}
+.game__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10vw;
+}
+.container__left,
+.container__right {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.game__input {
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  border: 5px solid #fff;
+  padding: 20px;
+  font-size: 20px;
+}
+@media (max-width: 1100px) {
+  .game__container {
+    flex-direction: column;
+    row-gap: 10vh;
+  }
+}
+@media (max-width: 750px) {
+  .header__options {
+    flex-direction: column;
+    align-items: start;
+    row-gap: 40px;
+  }
+  .header {
+    padding: 25px 15px 15px 15px;
+    align-items: end;
+  }
+  .game {
+    margin-top: 2vh;
+  }
+  .input-before::before {
+    right: -130px;
+  }
+}
+@media (max-width: 670px) {
+  .game__title {
+    font-size: 36px;
+    text-align: center;
+  }
+  .game,
+  .button,
+  .header__options__item,
+  .header__input,
+  .game__input {
+    font-size: 16px;
+  }
+}
+@media (max-width: 420px) {
+  .header {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .game__input {
+    width: 100%;
+  }
+  .game {
+    row-gap: 6vh;
+  }
+  .container__right span {
+    text-align: center;
+  }
+}
