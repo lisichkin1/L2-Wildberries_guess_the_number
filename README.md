@@ -41,3 +41,6 @@ npm run start
 ```
 
 ### Демо игры
+![2023-12-25_00-58-59](https://github.com/lisichkin1/L2-Wildberries_guess_the_number/assets/91782961/a907afbb-999f-4c00-a9a4-7929ae95bd11)
+
+
