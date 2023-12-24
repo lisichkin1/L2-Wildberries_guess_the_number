@@ -1,4 +1,5 @@
 import { adjustWidth, checkWin, newGame } from './utils.js';
+import '../assets/styles/style.css';
 let randomNumber = 0;
 let attempts = 0;
 //достаем все нужные элементы
@@ -10,7 +11,8 @@ const spanAttempts = document.querySelector('.container__right__attempts');
 const gameButton = document.querySelector('.game__button');
 const newGameButton = document.querySelector('.header__button');
 const optionsButton = document.querySelector('.header__options__button');
-
+const message = document.querySelector('.container__right__message');
+const message_second = document.querySelector('.container__right__message__second');
 //функция, которая обновляет рандомное число и вызывает новую игру
 const updateRandomNumber = () => {
   randomNumber = newGame(minInput.value, maxInput.value, spanNumber, gameInput, spanAttempts);
@@ -42,8 +44,17 @@ optionsButton.addEventListener('click', () => {
 //вешаем слушатель на кнопку "Проверить" и валидируем ввденённое значения
 gameButton.addEventListener('click', () => {
   const userInput = gameInput.value.trim();
-  if (/^\d+$/.test(userInput)) {
-    attempts = checkWin(randomNumber, Number(userInput), spanAttempts, attempts, spanNumber);
+  const userInputMax = maxInput.value.trim();
+  if (/^\d+$/.test(userInput) && Number(userInput) <= Number(userInputMax)) {
+    attempts = checkWin(
+      randomNumber,
+      Number(userInput),
+      spanAttempts,
+      attempts,
+      spanNumber,
+      message,
+      message_second,
+    );
   } else {
     alert('Введите корректное числовое значение');
   }
@@ -52,6 +63,9 @@ gameButton.addEventListener('click', () => {
 //слушатель кнопки новой игры
 newGameButton.addEventListener('click', () => {
   updateRandomNumber();
+  message.innerText = '';
+  message_second.innerText = '';
+  attempts = 0;
 });
 
 //начинаем новую игру и расчитываем ширину инпутов

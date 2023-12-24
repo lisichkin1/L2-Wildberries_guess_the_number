@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Tic Tak Toe</title>
+
+    <title>Угадай число</title>
   </head>
   <body class="body">
     <header class="header">
@@ -28,7 +28,7 @@
               type="text"
               name=""
               id="input__max"
-              value="3"
+              value="100"
             />
           </div>
         </div>
@@ -46,9 +46,12 @@
         </div>
         <div class="container__right">
           <span>Использовано попыток: <span class="container__right__attempts">0</span></span>
+          <span>1 подсказка:<span class="container__right__message"></span></span>
+          <span>2 подсказка:<span class="container__right__message__second"></span></span>
         </div>
       </div>
     </main>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="./js/utils.js"></script>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
